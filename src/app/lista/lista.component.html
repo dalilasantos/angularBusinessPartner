@@ -1,0 +1,17 @@
+Lista dos business Partners
+<div class="container">
+  <div class="card" style="width: 18rem;" *ngFor="let item of data; let mostrarCampoDeEditar = index">
+      <img class="card-img-top" [src]="item.avatar">
+      <div class="card-body">
+        <h5 class="card-title">{{item.cardName}}</h5>
+        <div class="container-editar">
+          <input type="text" #novoCardName>
+          <button 
+          (click)="editaCardNameBusinessPartner(item.cardCode, novoCardName.value)"
+          type="button" class="btn btn-success">Ok</button>
+        </div>
+        <p class="card-text">{{item.address}} {{item.zipCode}}</p>
+        <a (click)="deletaBusinessPartner(item.cardCode)" class="btn btn-danger">Deletar!</a>
+      </div>
+    </div>
+</div>
